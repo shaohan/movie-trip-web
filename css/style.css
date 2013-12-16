@@ -1,0 +1,17 @@
+#menu {
+    float: right;
+}
+
+#branding-logo img {
+    width: 60px;
+    margin: 10px 20px;
+    float:left;
+    border-radius: 12px;
+}
+
+#search-wrapper {
+    background-color: #FF0;
+    text-align: center;
+}
+
+

@@ -1,22 +1,64 @@
-<html>
+<!DOCTYPE html>
+
+<html class="full" lang="en">
+
 	<head>
-		<title>PHP TEST</title>
-	</head>
-	<body>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
 
-		<p>input movie title</p>
+	    <title>Movie Trip: Travel Like a Movie Star</title>
 
-			<form method="GET" action="./test2.php">
-			<input type="text" name="title">
-			<input type="submit" name="btn1" value="answer">
-			</form>
+	    <!-- CSS sheets -->
+	    <link href="css/style.css" rel="stylesheet">
+    	<link href="css/bootstrap.css" rel="stylesheet">
 
-		<p>input your location</p>
+	 </head>
 
-			<form method="GET" action="./test5.php">
-			<input type="text" name="location">
-			<input type="submit" name="btn2" value="answer">
-			</form>
 
-	</body>
+  	<body>
+    <nav class="navbar navbar-fixed navbar-inverse">
+      <div class="container">
+          <div id="branding-logo">
+            <img src="image/icon.png" alt="logo">
+          </div><!-- #branding-logo -->
+        	<a class="navbar-brand" href="test1.html">Movie Trip</a>
+
+        <div id="menu">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#mytrips">My Trips</a></li>
+              <li><a href="#checkin-history">History</a></li>
+              <li><a href="#loginin" style=>Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.menu -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div id="search-wrapper">
+      		<div id="search-box">
+       			<p>input movie title</p>
+        		<form method="GET" action="./test2.php">
+          			<input type="text" name="title">
+          			<input type="submit" name="btn1" value="answer">
+        		</form>
+
+     			<p>input your location</p>
+        		<form method="GET" action="./test5.php">
+          			<input type="text" name="location">
+          			<input type="submit" name="btn2" value="answer">
+        		</form>
+    		</div><!-- /#search-box -->
+  		</div><!-- /#wrapper -->
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
 </html>
+
