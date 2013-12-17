@@ -1,8 +1,40 @@
-<html>
+<!DOCTYPE html>
+
+<html class="full" lang="en">
+
 	<head>
-		<title>PHP TEST</title>
-	</head>
-	<body>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+
+    	<title>Movie Trip - Search Result</title>
+
+	    <!-- CSS sheets -->
+	    <link href="css/style.css" rel="stylesheet">
+    	<link href="css/bootstrap.css" rel="stylesheet">
+	 </head>
+
+<body>
+
+<nav class="navbar navbar-fixed navbar-inverse">
+      <div class="container">
+          <div id="branding-logo">
+            <img src="image/icon.png" alt="logo">
+          </div><!-- #branding-logo -->
+        	<a class="navbar-brand" href="test1.html">Movie Trip</a>
+
+        <div id="menu">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#mytrips">My Trips</a></li>
+              <li><a href="#checkin-history">History</a></li>
+              <li><a href="#loginin" style=>Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.menu -->
+      </div><!-- /.container -->
+    </nav>
+
 
 <?php
 	if(isset($_GET['id'])) {
@@ -16,8 +48,8 @@
 	if ($SearchResult2 == false) {
        echo "error";
        return;
-	} 
-	
+	}
+
 	$dec_obj=json_decode($SearchResult2);
 	$dec_arr=json_decode($SearchResult2, true);
 
@@ -39,17 +71,22 @@ try{
 	$st = $dbh->query($sql_movie_data);
 
 	$result = $st->fetch(PDO::FETCH_BOTH);
-	echo "Movie_Data </BR>";
-	print("Movie_Id(MD5): " . $result['Movie_Id'] . "</BR>");
-	print("IMDb_Id: " . $result['IMDb_Id'] . "</BR>");
-	print("Title: " . $result['Title'] . "</BR>");
-	print("Year: " . $result['Year'] . "</BR>");
-	print("Genre: " . $result['Genre'] . "</BR>");
-	print("Description: " . $result['Description'] . "</BR>");
-	print("<img src=\"" .  $result['Poster'] . "\"/>");
-	echo '<p>Would you like to look the filming location data? <a href="test4.php?id=', $movie_id, '">Yes</a>';
+	echo '<div class="container"><h3>', $result['Title'],'&nbsp(', $result['Year'], ')&nbsp', '</h3>';
+	echo 'Title: ', $result['Title'], '<br>';
+	echo 'Movie_Id(MD5): ', $result['Movie_Id'] , '<br>';
+	echo 'IMDb_Id: ', $result['IMDb_Id'], '<br>';
+	echo 'Year: ', $result['Year'], '<br>';
+	echo 'Genre: ', $result['Genre'], '<br>';
+	echo 'Description: ', $result['Description'], '<br><br>';
 
-}catch (PDOException $e){
+	print("<img src=\"" .  $result['Poster'] . "\"/>");
+
+	echo '<br><br>';
+	echo '<h3>Would you like to look the filming location data? <a href="test4.php?id=', $movie_id, '">Yes</a></h3>';
+	echo '</div>';
+
+
+} catch (PDOException $e){
     print('Error:'.$e->getMessage());
     die();
 }
@@ -58,5 +95,5 @@ $dbh = null;
 
 ?>
 
-	</body>
+</body>
 </html>
