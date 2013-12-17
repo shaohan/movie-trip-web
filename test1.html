@@ -39,18 +39,20 @@
     <div class="container">
         <div id="search-wrapper">
       		<div id="search-box">
-       			<label>Enter a Movie Title</label>
-        		<form method="GET" action="./test2.php">
+
+        		<form id="search-by-movie" method="GET" action="./test2.php">
+                <label>Enter a Movie Title</label><br>
           			<input type="text" name="title">
           			<input type="submit" name="btn1" value="Search">
         		</form>
 
             <br>
-            <h4>--------------------- or ---------------------</h4>
+            <h3>or</h3>
             <br>
 
-     			<label>Enter a Location</label>
-        		<form method="GET" action="./test5.php">
+
+        		<form id="search-by-city" method="GET" action="./test5.php">
+                <label>Enter a City Name</label><br>
           			<input type="text" name="location">
           			<input type="submit" name="btn2" value="Search">
         		</form>

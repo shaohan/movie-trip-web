@@ -32,6 +32,21 @@
     border-radius: 10px;
 }
 
+
+#search-by-movie {
+    margin: 5px 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+#search-by-city {
+    margin: 5px 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
 #city-matches {
     font-size: 18px;
 }
