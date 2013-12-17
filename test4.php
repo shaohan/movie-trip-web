@@ -25,7 +25,7 @@
           </div><!-- #branding-logo -->
         	<a class="navbar-brand" href="test1.html">Movie Trip</a>
 
-        <div id="menu">
+        <div id="menu" style="display:none">
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
               <li><a href="#mytrips">My Trips</a></li>
