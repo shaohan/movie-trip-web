@@ -10,8 +10,25 @@
 }
 
 #search-wrapper {
-    background-color: #FF0;
+    margin-top: 30px;
+    background-color: #FDECC1;
+    padding: 30px;
     text-align: center;
+    border-radius: 20px;
+}
+
+#search-wrapper label {
+    font-size: 18px;
+}
+
+
+#search-wrapper input[type=text] {
+    margin-right: 20px;
+}
+
+
+#search-wrapper input[type=submit] {
+    border-radius: 10px;
 }
 
 
