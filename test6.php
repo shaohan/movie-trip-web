@@ -1,8 +1,39 @@
-<html>
+<!DOCTYPE html>
+
+<html class="full" lang="en">
+
 	<head>
-		<title>Movie Trip</title>
-	</head>
-	<body>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+
+    	<title>Movie Trip - Search Result</title>
+
+	    <!-- CSS sheets -->
+	    <link href="css/style.css" rel="stylesheet">
+    	<link href="css/bootstrap.css" rel="stylesheet">
+	 </head>
+
+<body>
+
+<nav class="navbar navbar-fixed navbar-inverse">
+      <div class="container">
+          <div id="branding-logo">
+            <img src="image/icon.png" alt="logo">
+          </div><!-- #branding-logo -->
+        	<a class="navbar-brand" href="test1.html">Movie Trip</a>
+
+        <div id="menu">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#mytrips">My Trips</a></li>
+              <li><a href="#checkin-history">History</a></li>
+              <li><a href="#loginin" style=>Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.menu -->
+      </div><!-- /.container -->
+    </nav>
 
 <?php
 	if(isset($_GET['city_id'])) {
@@ -21,7 +52,7 @@ try{
 
 	while($result4 = $st4->fetch(PDO::FETCH_BOTH)){
 
-        	$location_id = $result4['Location_Id'];
+        $location_id = $result4['Location_Id'];
 		$sql_location_movie = "SELECT Distinct * FROM Filmed_In WHERE Location_Id = '$location_id'";
 		$st5 = $dbh->query($sql_location_movie);
 		$result5 = $st5->fetch(PDO::FETCH_BOTH);
@@ -37,9 +68,8 @@ try{
 
 //print($result['Location_Id'].' '.$result['Latitude'].' '.$result['Longitude'].' '.$result['Description'].'</BR>');
 //		print('<a href="https://maps.google.com/maps?q='.$result['Latitude'].','.$result['Longitude'].'">* '.$result['Description'].'</a></BR>');
-	}
 
-}catch (PDOException $e){
+} catch (PDOException $e){
     print('Error:'.$e->getMessage());
     die();
 }
