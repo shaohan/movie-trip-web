@@ -18,12 +18,13 @@
 }
 
 #search-wrapper label {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 
 #search-wrapper input[type=text] {
     margin-right: 20px;
+    width: 200px;
 }
 
 
@@ -31,4 +32,14 @@
     border-radius: 10px;
 }
 
+#city-matches {
+    font-size: 18px;
+}
 
+#city-matches a {
+    text-decoration: underline;
+}
+
+.city-name {
+    font-weight: bold;
+}
