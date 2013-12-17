@@ -39,7 +39,6 @@
 
 	echo '<div class="container">';
 
-
 	if(isset($_GET['city_id'])) {
 		$city_id = $_GET['city_id'];
 	}
@@ -51,6 +50,16 @@ try{
 	require_once('cfg.php');
 	$dbh = new PDO($db['dsn'], $db['user'], $db['password']);
 	//print('Success<br>');
+
+
+	$sql_city_name = "SELECT Name FROM City WHERE City_Id = '" . $city_id . "'";
+	$st7 = $dbh->query($sql_city_name);
+
+	while($result7 = $st7->fetch(PDO::FETCH_ASSOC)){
+        //print($result['Location_Id'].' '.$result['Latitude'].' '.$result['Longitude'].' '.$result['Description'].'</BR>');
+		echo '<h3>Movies filmed in "',$result7['Name'], '":</h3>';
+	}
+
 
 	$sql_city_location = "SELECT * FROM Location WHERE City_Id = '$city_id'";
 	$st4 = $dbh->query($sql_city_location);
